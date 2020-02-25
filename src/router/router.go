@@ -20,13 +20,10 @@ func New() *echo.Echo {
 	middlewares.SetJwtMiddlewares(jwtGroup)
 	middlewares.SetCookieMiddlewares(cookieGroup)
 
-	// set main routes
+	// set routes
 	api.MainGroup(e)
-	// set admin routes
 	api.AdminGroup(adminGroup)
-	// set cookie routes
 	api.CookieGroup(cookieGroup)
-	// set jwt routes
 	api.JwtGroup(jwtGroup)
 
 	return e
